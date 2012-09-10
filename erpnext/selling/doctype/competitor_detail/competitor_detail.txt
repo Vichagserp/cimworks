@@ -1,0 +1,122 @@
+# DocType, Competitor Detail
+[
+
+	# These values are common in all dictionaries
+	{
+		'creation': '2009-05-25 17:43:26',
+		'docstatus': 0,
+		'modified': '2012-09-06 16:16:49',
+		'modified_by': 'sangeeta_a@trimosmetrology.net',
+		'owner': 'Administrator'
+	},
+
+	# These values are common for all DocType
+	{
+		'autoname': 'Competitor/.#####',
+		'colour': 'White:FFF',
+		'doctype': 'DocType',
+		'istable': 1,
+		'module': 'Selling',
+		'name': '__common__',
+		'print_outline': 'No',
+		'section_style': 'Simple',
+		'show_in_menu': 0,
+		'version': 8
+	},
+
+	# These values are common for all DocField
+	{
+		'allow_on_submit': 1,
+		'doctype': 'DocField',
+		'name': '__common__',
+		'parent': 'Competitor Detail',
+		'parentfield': 'fields',
+		'parenttype': 'DocType',
+		'permlevel': 0
+	},
+
+	# DocType, Competitor Detail
+	{
+		'doctype': 'DocType',
+		'name': 'Competitor Detail'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'competitor_name',
+		'fieldtype': 'Data',
+		'label': 'Company Name',
+		'oldfieldname': 'competitor_name',
+		'oldfieldtype': 'Data'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'item_name',
+		'fieldtype': 'Data',
+		'hidden': 1,
+		'label': 'Item Name',
+		'oldfieldname': 'item_name',
+		'oldfieldtype': 'Data',
+		'print_hide': 1,
+		'report_hide': 1,
+		'reqd': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'brand',
+		'fieldtype': 'Data',
+		'hidden': 0,
+		'label': 'Brand',
+		'oldfieldname': 'item_name',
+		'oldfieldtype': 'Data',
+		'print_hide': 1,
+		'report_hide': 1,
+		'reqd': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'description',
+		'fieldtype': 'Data',
+		'label': 'Model Name',
+		'oldfieldname': 'description',
+		'oldfieldtype': 'Data'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'quoted_price',
+		'fieldtype': 'Data',
+		'label': 'Comments',
+		'oldfieldname': 'quoted_price',
+		'oldfieldtype': 'Data',
+		'width': '300px'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'advantages',
+		'fieldtype': 'Small Text',
+		'label': 'Advantages',
+		'oldfieldname': 'advantages',
+		'oldfieldtype': 'Small Text'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'disadvantages',
+		'fieldtype': 'Small Text',
+		'label': 'Dis-advantages',
+		'oldfieldname': 'disadvantages',
+		'oldfieldtype': 'Small Text'
+	}
+]

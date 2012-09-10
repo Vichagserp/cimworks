@@ -1,0 +1,50 @@
+# DocType, Territory Notification
+[
+
+	# These values are common in all dictionaries
+	{
+		'creation': '2012-09-03 22:08:20',
+		'docstatus': 0,
+		'modified': '2012-09-03 22:42:35',
+		'modified_by': 'Administrator',
+		'owner': 'Administrator'
+	},
+
+	# These values are common for all DocType
+	{
+		'colour': 'White:FFF',
+		'doctype': 'DocType',
+		'istable': 1,
+		'module': 'Setup',
+		'name': '__common__',
+		'section_style': 'Simple',
+		'show_in_menu': 0,
+		'version': 3
+	},
+
+	# These values are common for all DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'profile',
+		'fieldtype': 'Link',
+		'label': 'Profile',
+		'name': '__common__',
+		'options': 'Profile',
+		'parent': 'Territory Notification',
+		'parentfield': 'fields',
+		'parenttype': 'DocType',
+		'permlevel': 0,
+		'width': '300px'
+	},
+
+	# DocType, Territory Notification
+	{
+		'doctype': 'DocType',
+		'name': 'Territory Notification'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField'
+	}
+]

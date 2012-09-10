@@ -1,0 +1,52 @@
+# DocType, Brand Notification
+[
+
+	# These values are common in all dictionaries
+	{
+		'creation': '2012-09-03 22:07:56',
+		'docstatus': 0,
+		'modified': '2012-09-04 15:29:07',
+		'modified_by': 'Administrator',
+		'owner': 'Administrator'
+	},
+
+	# These values are common for all DocType
+	{
+		'colour': 'White:FFF',
+		'doctype': 'DocType',
+		'istable': 1,
+		'module': 'Setup',
+		'name': '__common__',
+		'section_style': 'Simple',
+		'show_in_menu': 0,
+		'version': 3
+	},
+
+	# These values are common for all DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'profile',
+		'fieldtype': 'Link',
+		'label': 'Profile',
+		'name': '__common__',
+		'options': 'Profile',
+		'parent': 'Brand Notification',
+		'parentfield': 'fields',
+		'parenttype': 'DocType',
+		'permlevel': 0,
+		'reqd': 1,
+		'search_index': 1,
+		'width': '300px'
+	},
+
+	# DocType, Brand Notification
+	{
+		'doctype': 'DocType',
+		'name': 'Brand Notification'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField'
+	}
+]

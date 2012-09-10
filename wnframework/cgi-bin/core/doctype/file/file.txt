@@ -1,0 +1,180 @@
+# DocType, File
+[
+
+	# These values are common in all dictionaries
+	{
+		'creation': '2009-06-18 14:24:29',
+		'docstatus': 0,
+		'modified': '2012-03-05 00:13:59',
+		'modified_by': 'Administrator',
+		'owner': 'Administrator'
+	},
+
+	# These values are common for all DocType
+	{
+		'allow_attach': 1,
+		'autoname': 'field:file_name',
+		'colour': 'White:FFF',
+		'doctype': 'DocType',
+		'max_attachments': 1,
+		'module': 'Core',
+		'name': '__common__',
+		'print_outline': 'No',
+		'search_fields': 'type, file_group',
+		'section_style': 'Simple',
+		'server_code_error': '<pre style="text-align: left;"></pre>',
+		'show_in_menu': 0,
+		'version': 9
+	},
+
+	# These values are common for all DocField
+	{
+		'doctype': 'DocField',
+		'name': '__common__',
+		'parent': 'File',
+		'parentfield': 'fields',
+		'parenttype': 'DocType'
+	},
+
+	# These values are common for all DocPerm
+	{
+		'doctype': 'DocPerm',
+		'name': '__common__',
+		'parent': 'File',
+		'parentfield': 'permissions',
+		'parenttype': 'DocType',
+		'read': 1,
+		'role': 'Administrator'
+	},
+
+	# DocType, File
+	{
+		'doctype': 'DocType',
+		'name': 'File'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'file_name',
+		'fieldtype': 'Data',
+		'hidden': 1,
+		'label': 'File Name',
+		'oldfieldname': 'file_name',
+		'oldfieldtype': 'Data',
+		'permlevel': 0,
+		'reqd': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'description',
+		'fieldtype': 'Text',
+		'label': 'Description',
+		'oldfieldname': 'description',
+		'oldfieldtype': 'Text',
+		'permlevel': 0,
+		'reqd': 1,
+		'width': '300px'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'mime_type',
+		'fieldtype': 'Data',
+		'label': 'MIME Type',
+		'oldfieldname': 'mime_type',
+		'oldfieldtype': 'Data',
+		'permlevel': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'type',
+		'fieldtype': 'Select',
+		'label': 'Type',
+		'oldfieldname': 'type',
+		'oldfieldtype': 'Select',
+		'options': '\nImage\nDocument\nSpreadsheet\nPresentation\nOther',
+		'permlevel': 0,
+		'reqd': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'file_group',
+		'fieldtype': 'Link',
+		'label': 'File Group',
+		'oldfieldname': 'file_group',
+		'oldfieldtype': 'Link',
+		'options': 'File Group',
+		'permlevel': 0,
+		'reqd': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'file_list',
+		'fieldtype': 'Text',
+		'label': 'File List',
+		'oldfieldname': 'file_list',
+		'oldfieldtype': 'Text',
+		'permlevel': 2,
+		'search_index': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'shared_with',
+		'fieldtype': 'Text',
+		'hidden': 1,
+		'label': 'Shared With',
+		'oldfieldname': 'shared_with',
+		'oldfieldtype': 'Text',
+		'permlevel': 0,
+		'reqd': 0,
+		'search_index': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'can_edit',
+		'fieldtype': 'Text',
+		'label': 'Can Edit',
+		'oldfieldname': 'can_edit',
+		'oldfieldtype': 'Text',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'can_view',
+		'fieldtype': 'Text',
+		'label': 'Can View',
+		'oldfieldname': 'can_view',
+		'oldfieldtype': 'Text',
+		'permlevel': 0
+	},
+
+	# DocPerm
+	{
+		'create': 1,
+		'doctype': 'DocPerm',
+		'permlevel': 0,
+		'write': 1
+	},
+
+	# DocPerm
+	{
+		'doctype': 'DocPerm',
+		'permlevel': 1
+	}
+]

@@ -1,0 +1,88 @@
+# DocType, Tag Detail
+[
+
+	# These values are common in all dictionaries
+	{
+		'creation': '2011-07-17 01:56:47',
+		'docstatus': 0,
+		'modified': '2011-07-17 01:56:47',
+		'modified_by': 'Administrator',
+		'owner': 'Administrator'
+	},
+
+	# These values are common for all DocType
+	{
+		'autoname': 'TD/.#####',
+		'colour': 'White:FFF',
+		'doctype': 'DocType',
+		'istable': 1,
+		'module': 'Core',
+		'name': '__common__',
+		'section_style': 'Simple',
+		'server_code_error': ' ',
+		'show_in_menu': 0,
+		'version': 4
+	},
+
+	# These values are common for all DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'Data',
+		'name': '__common__',
+		'oldfieldtype': 'Data',
+		'parent': 'Tag Detail',
+		'parentfield': 'fields',
+		'parenttype': 'DocType',
+		'permlevel': 0
+	},
+
+	# These values are common for all DocPerm
+	{
+		'doctype': 'DocPerm',
+		'idx': 1,
+		'name': '__common__',
+		'parent': 'Tag Detail',
+		'parentfield': 'permissions',
+		'parenttype': 'DocType',
+		'permlevel': 0,
+		'role': 'System Manager'
+	},
+
+	# DocType, Tag Detail
+	{
+		'doctype': 'DocType',
+		'name': 'Tag Detail'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'tag_by',
+		'idx': 1,
+		'label': 'Tag By',
+		'oldfieldname': 'tag_by'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'tag_doctype',
+		'idx': 2,
+		'label': 'Tag Doctype',
+		'oldfieldname': 'tag_doctype'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'tag_docname',
+		'idx': 3,
+		'label': 'Tag Docname',
+		'oldfieldname': 'tag_docname'
+	},
+
+	# DocPerm
+	{
+		'doctype': 'DocPerm'
+	}
+]
