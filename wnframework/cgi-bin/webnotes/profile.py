@@ -188,7 +188,7 @@ class Profile:
 
 			
 			# clear old style (to be removed)
-			if '~~' in r: r = ''
+			if '~~' in r: r = '[]'
 			
 			rdl = json.loads(r or '[]')
 			new_rd = [dt, dn]
@@ -200,10 +200,10 @@ class Profile:
 					del rdl[i]
 					break
 
-			rdl.append(new_rd)
-			if len(rdl) > 20:
-				rdl = rdl[:20]
+			if len(rdl) > 19:
+				rdl = rdl[:19]
 			
+			rdl = [new_rd] + rdl
 			self.recent = json.dumps(rdl)
 						
 			webnotes.conn.sql("update tabProfile set recent_documents=%s where name=%s", (self.recent, self.name))
