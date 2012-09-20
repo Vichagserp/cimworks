@@ -190,7 +190,7 @@ ItemBrowser.prototype.make_toolbar = function() {
 	if(in_list(profile.can_write, this.dt)) {
 		this.archive_btn = $btn(this.main_toolbar, 'Archive', function() { me.archive_items(); }, {marginLeft:'24px'});
 	} 
-	if(this.dt_details.can_cancel) {
+	if(this.dt_details.can_cancel && in_list(profile.roles, ['CRM Manager'])) {
 		this.delete_btn = $btn(this.main_toolbar, 'Delete', function() { me.delete_items(); });
 	}
 	

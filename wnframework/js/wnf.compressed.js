@@ -1154,7 +1154,7 @@ ItemBrowser.prototype.get_status_check=function(){ret=[];if(this.check_Draft.che
 return ret;}
 ItemBrowser.prototype.make_toolbar=function(){var me=this;if(this.dt_details.description)this.desc_area.innerHTML=this.dt_details.description;if(inList(profile.can_create,this.dt)){this.new_button=$btn(this.main_toolbar,'+ New '+get_doctype_label(this.dt),function(){newdoc(me.dt)},{fontWeight:'bold',marginRight:'0px'},'green');}
 if(in_list(profile.can_write,this.dt)){this.archive_btn=$btn(this.main_toolbar,'Archive',function(){me.archive_items();},{marginLeft:'24px'});}
-if(this.dt_details.can_cancel){this.delete_btn=$btn(this.main_toolbar,'Delete',function(){me.delete_items();});}
+if(this.dt_details.can_cancel&&in_list(profile.roles,['CRM Manager'])){this.delete_btn=$btn(this.main_toolbar,'Delete',function(){me.delete_items();});}
 if(this.archive_btn&&this.delete_btn)
 $btn_join(this.archive_btn,this.delete_btn)
 this.search_input=$a(this.main_toolbar,'input','',{width:'120px',marginLeft:'24px',border:'1px solid #AAA'});this.search_btn=$btn(this.main_toolbar,'Search',function(){me.run();},{marginLeft:'4px'});this.search_input.onkeypress=function(e){if(e.keyCode==13){me.run();}}
@@ -1327,7 +1327,9 @@ if(errfld.length)msgprint('<b>Mandatory fields required in '+
 (doc.parenttype?(fields[doc.parenttype][doc.parentfield].label+' (Table)'):get_doctype_label(doc.doctype))+':</b>\n'+errfld.join('\n'));return all_clear;}
 function Body(){this.left_sidebar=null;this.right_sidebar=null;this.status_area=null;var me=this;page_body=this;this.no_of_columns=function(){var n=2;if(cint(me&&me.cp&&me.cp.right_sidebar_width))
 n=n+1;return n;}
-this.setup_page_areas=function(){var n=this.no_of_columns();this.body_table=make_table(this.body,1,n,'100%');$y(this.body_table,{tableLayout:'fixed'});var c=0;this.left_sidebar=$td(this.body_table,0,c);$y(this.left_sidebar,{width:cint(this.cp.left_sidebar_width)+'px'});c++;this.center=$a($td(this.body_table,0,c),'div');c++;if(cint(this.cp.right_sidebar_width)){this.right_sidebar=$td(this.body_table,0,c);$y(this.right_sidebar,{width:cint(this.cp.right_sidebar_width)+'px'})
+this.setup_page_areas=function(){var n=this.no_of_columns();this.body_table=make_table(this.body,1,n,'100%');$y(this.body_table,{tableLayout:'fixed'});var c=0;this.left_sidebar=$td(this.body_table,0,c);$y(this.left_sidebar,{width:cint(this.cp.left_sidebar_width)+'px'});if(cint(this.cp.right_sidebar_width)){this.right_sidebar=$td(this.body_table,0,c);$y(this.right_sidebar,{width:cint(this.cp.right_sidebar_width)+'px'})
+c++;}
+c++;this.center=$a($td(this.body_table,0,c),'div');c++;if(cint(this.cp.right_sidebar_width)){this.right_sidebar=$td(this.body_table,0,c);$y(this.right_sidebar,{width:cint(this.cp.right_sidebar_width)+'px'})
 c++;}
 this.center.header=$a(this.center,'div');this.center.body=$a(this.center,'div');this.center.loading=$a(this.center,'div','',{margin:'200px 0px',fontSize:'14px',color:'#999',textAlign:'center'});this.center.loading.innerHTML='Loading...'}
 this.setup_sidebar_menu=function(){if(this.left_sidebar&&this.cp.show_sidebar_menu){new_widget('SidebarMenu',function(m){sidebar_menu=m;m.make_menu('');});}}
