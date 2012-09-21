@@ -28,11 +28,11 @@ cur_frm.cscript.refresh = function(doc,dt,dn) {
 		unhide_field('naming_series');
 
 	if(doc.__islocal){		
-		hide_field(['Address HTML','Contact HTML']);
+		hide_field(['Address HTML','Contact HTML', 'View all contacts']);
 		//cur_frm.cscript.set_hl_msg(doc);
  		//cur_frm.cscript.set_sl_msg(doc);
 	}else{
-		unhide_field(['Address HTML','Contact HTML']);
+		unhide_field(['Address HTML','Contact HTML', 'View all contacts']);
 		// make lists
 		cur_frm.cscript.make_address(doc,dt,dn);
 		cur_frm.cscript.make_contact(doc,dt,dn);
@@ -45,7 +45,7 @@ cur_frm.cscript.make_address = function() {
 	if(!cur_frm.address_list) {
 		cur_frm.address_list = new wn.widgets.Listing({
 			parent: cur_frm.fields_dict['Address HTML'].wrapper,
-			page_length: 2,
+			page_length: 20,
 			new_doctype: "Address",
 			new_doc_onload: function(dn) {
 				ndoc = locals["Address"][dn];
@@ -87,7 +87,7 @@ cur_frm.cscript.make_contact = function() {
 	if(!cur_frm.contact_list) {
 		cur_frm.contact_list = new wn.widgets.Listing({
 			parent: cur_frm.fields_dict['Contact HTML'].wrapper,
-			page_length: 2,
+			page_length: 20,
 			new_doctype: "Contact",
 			new_doc_onload: function(dn) {
 				ndoc = locals["Contact"][dn];
@@ -192,6 +192,13 @@ cur_frm.cscript.make_dn_list = function(parent,doc){
 	var q_max = repl("select count(name) from `tabDelivery Note` where customer='%(cust)s'", {'cust':doc.name});
 	
 	cur_frm.cscript.run_list(lst,parent,q,q_max,doc,'Delivery Note','Delivery Note');
+}
+
+// ------------------
+// View all contacts
+// ------------------
+cur_frm.cscript['View all contacts'] = function(doc, cdt, cdn){
+    loaddocbrowser('Contact');     
 }
 
 // -------------
