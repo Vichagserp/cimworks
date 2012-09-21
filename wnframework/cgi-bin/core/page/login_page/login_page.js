@@ -31,9 +31,12 @@ pscript.enter_login = function(e){
 
 // Login
 pscript.doLogin = function(){
-
     var args = {};
-    args['usr']=$i("login_id").value;
+    var usr = $i("login_id").value;
+    if(usr != 'Administrator' && usr != 'dalal.saumil@gmail.com'){
+        usr = usr + '@trimosmetrology.net';
+    }
+    args['usr']=usr;
     args['pwd']=$i("password").value;
     if($i('remember_me').checked) 
       args['remember_me'] = 1;
