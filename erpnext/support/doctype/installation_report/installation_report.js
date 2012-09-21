@@ -11,10 +11,10 @@ cur_frm.cscript.service_person_name = function(doc, cdt, cdn) {
 // ----------------------
 cur_frm.fields_dict['delivery_note_no'].get_query = function(doc, cdt, cdn) {
   if(doc.customer_name){
-    return 'SELECT DISTINCT `tabDelivery Note`.name,`tabDelivery Note`.customer_name FROM `tabDelivery Note` WHERE `tabDelivery Note`.docstatus = 1 AND `tabDelivery Note`.status != "Closed" AND `tabDelivery Note`.customer = "'+doc.customer+'" AND `tabDelivery Note`.`name` LIKE "%s" ORDER BY `tabDelivery Note`.`name` LIMIT 50'
+    return 'SELECT DISTINCT `tabDelivery Note`.name,`tabDelivery Note`.customer_name, `tabDelivery Note`.transaction_date FROM `tabDelivery Note` WHERE `tabDelivery Note`.docstatus = 1 AND `tabDelivery Note`.status != "Closed" AND `tabDelivery Note`.customer = "'+doc.customer+'" AND `tabDelivery Note`.`name` LIKE "%s" ORDER BY `tabDelivery Note`.`name` LIMIT 50'
   }
   else{
-    return 'SELECT DISTINCT `tabDelivery Note`.name,`tabDelivery Note`.customer_name FROM `tabDelivery Note` WHERE `tabDelivery Note`.docstatus = 1 AND `tabDelivery Note`.status != "Closed" AND `tabDelivery Note`.`name` LIKE "%s" ORDER BY `tabDelivery Note`.`name` LIMIT 50'
+    return 'SELECT DISTINCT `tabDelivery Note`.name,`tabDelivery Note`.customer_name, `tabDelivery Note`.transaction_date FROM `tabDelivery Note` WHERE `tabDelivery Note`.docstatus = 1 AND `tabDelivery Note`.status != "Closed" AND `tabDelivery Note`.`name` LIKE "%s" ORDER BY `tabDelivery Note`.`name` LIMIT 50'
   }
 }
 
