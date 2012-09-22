@@ -93,6 +93,7 @@ cur_frm.cscript.make_contact = function() {
 				ndoc = locals["Contact"][dn];
 				ndoc.customer = cur_frm.doc.name;
 				ndoc.customer_name = cur_frm.doc.customer_name;
+                ndoc.territory = cur_frm.doc.territory;
 				if(cur_frm.doc.customer_type == 'Individual') {
 					ndoc.first_name = cur_frm.doc.customer_name;
 				}
