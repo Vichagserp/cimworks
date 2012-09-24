@@ -1,0 +1,110 @@
+# DocType, Role
+[
+
+	# These values are common in all dictionaries
+	{
+		'creation': '2009-03-20 09:49:42',
+		'docstatus': 0,
+		'modified': '2012-06-27 18:30:46',
+		'modified_by': 'Administrator',
+		'owner': 'Administrator'
+	},
+
+	# These values are common for all DocType
+	{
+		'_last_update': '1313694249',
+		'allow_copy': 0,
+		'allow_email': 0,
+		'allow_print': 0,
+		'autoname': 'field:role_name',
+		'colour': 'White:FFF',
+		'doctype': 'DocType',
+		'hide_heading': 0,
+		'hide_toolbar': 0,
+		'issingle': 0,
+		'istable': 0,
+		'module': 'Setup',
+		'name': '__common__',
+		'print_outline': 'No',
+		'read_only': 0,
+		'section_style': 'Simple',
+		'server_code_error': ' ',
+		'show_in_menu': 0,
+		'version': 3
+	},
+
+	# These values are common for all DocField
+	{
+		'doctype': 'DocField',
+		'name': '__common__',
+		'parent': 'Role',
+		'parentfield': 'fields',
+		'parenttype': 'DocType',
+		'permlevel': 0
+	},
+
+	# These values are common for all DocPerm
+	{
+		'cancel': 0,
+		'create': 1,
+		'doctype': 'DocPerm',
+		'execute': 0,
+		'name': '__common__',
+		'parent': 'Role',
+		'parentfield': 'permissions',
+		'parenttype': 'DocType',
+		'permlevel': 0,
+		'read': 1,
+		'role': 'Administrator',
+		'submit': 0,
+		'write': 1
+	},
+
+	# DocType, Role
+	{
+		'doctype': 'DocType',
+		'name': 'Role'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'module',
+		'fieldtype': 'Link',
+		'label': 'Module',
+		'oldfieldname': 'module',
+		'oldfieldtype': 'Select',
+		'options': 'Module Def',
+		'reqd': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'role_name',
+		'fieldtype': 'Data',
+		'label': 'Role Name',
+		'oldfieldname': 'role_name',
+		'oldfieldtype': 'Data',
+		'reqd': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'defaults',
+		'fieldtype': 'Table',
+		'hidden': 0,
+		'label': 'Defaults',
+		'oldfieldname': 'defaults',
+		'oldfieldtype': 'Table',
+		'options': 'DefaultValue',
+		'reqd': 0,
+		'search_index': 0
+	},
+
+	# DocPerm
+	{
+		'doctype': 'DocPerm'
+	}
+]
