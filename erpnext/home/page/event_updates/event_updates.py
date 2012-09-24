@@ -83,4 +83,3 @@ def get_setup_status():
 		return ''
 		
 	return {'ret': ret, 'percent': percent}
-		

@@ -5,14 +5,14 @@
 	{
 		'creation': '2009-03-20 09:52:42',
 		'docstatus': 0,
-		'modified': '2012-05-09 12:10:49',
-		'modified_by': 'sangeeta_a@trimosmetrology.net',
+		'modified': '2012-09-20 23:29:54',
+		'modified_by': 'Administrator',
 		'owner': 'Administrator'
 	},
 
 	# These values are common for all DocType
 	{
-		'_last_update': '1336544889',
+		'_last_update': '1336545669',
 		'allow_attach': 1,
 		'allow_trash': 1,
 		'autoname': 'field:item_code',
@@ -23,11 +23,11 @@
 		'module': 'Stock',
 		'name': '__common__',
 		'print_outline': 'No',
-		'search_fields': 'item_name,description,item_group,product_code,brand,item_type',
+		'search_fields': 'description,item_group,product_code,brand,item_type',
 		'section_style': 'Tray',
 		'server_code_error': ' ',
 		'show_in_menu': 0,
-		'version': 186
+		'version': 187
 	},
 
 	# These values are common for all DocField

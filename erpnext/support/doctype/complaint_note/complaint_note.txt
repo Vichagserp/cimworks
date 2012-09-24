@@ -5,14 +5,14 @@
 	{
 		'creation': '2009-05-15 14:12:04',
 		'docstatus': 0,
-		'modified': '2012-01-27 18:00:52',
-		'modified_by': 'sangeeta_a@trimosmetrology.net',
+		'modified': '2012-09-11 11:30:01',
+		'modified_by': 'manisha_s@trimosmetrology.net',
 		'owner': 'Administrator'
 	},
 
 	# These values are common for all DocType
 	{
-		'_last_update': '1322560848',
+		'_last_update': '1347343041',
 		'client_script': 'cur_frm.cscript.serial_no = function(doc, cdt, cdn) {\n  var d = locals[cdt][cdn];\n  get_server_fields(\'get_serial_details\',d.serial_no,\'complaint_note_details\',doc,cdt,cdn,1);  \n}\ncur_frm.fields_dict[\'contact_person\'].get_query = function(doc, cdt, cdn) {\n  return \'SELECT `tabContact`.contact_name FROM `tabContact` WHERE `tabContact`.is_customer = 1 AND `tabContact`.customer_name = "\'+ doc.customer_name+\'" AND `tabContact`.contact_name LIKE "%s" ORDER BY `tabContact`.name ASC LIMIT 50\';\n}\ncur_frm.cscript.contact_person = function(doc, cdt, cdn) {\n  get_server_fields(\'get_contact_details\',\'\',\'\', doc, cdt, cdn, 1);\n}',
 		'colour': 'White:FFF',
 		'doctype': 'DocType',
@@ -22,7 +22,7 @@
 		'search_fields': 'customer_name,territory,call_type_complaint_status,resolved_by,status,complaint_date,brand',
 		'section_style': 'Simple',
 		'show_in_menu': 0,
-		'version': 7
+		'version': 10
 	},
 
 	# These values are common for all DocField
@@ -68,12 +68,11 @@
 
 	# DocField
 	{
-		'default': 'CN/12/JAN',
 		'doctype': 'DocField',
 		'fieldname': 'naming_series',
 		'fieldtype': 'Select',
 		'label': 'Naming Series',
-		'options': 'CN/12/JAN',
+		'options': '\nCN/12/AUG\nCN/12/SEP\nCN/12/OCT\nCN/12/NOV\nCN/12/DEC',
 		'permlevel': 0,
 		'reqd': 1
 	},
@@ -409,18 +408,6 @@
 		'label': 'Complaint Note Details',
 		'options': 'Complaint Note Detail',
 		'permlevel': 0
-	},
-
-	# DocField
-	{
-		'doctype': 'DocField',
-		'fieldname': 'email_id',
-		'fieldtype': 'Data',
-		'label': 'Email Id',
-		'oldfieldname': 'email_id',
-		'oldfieldtype': 'Data',
-		'permlevel': 1,
-		'reqd': 1
 	},
 
 	# DocField
