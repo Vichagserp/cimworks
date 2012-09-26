@@ -45,7 +45,7 @@ cur_frm.cscript.make_address = function() {
 	if(!cur_frm.address_list) {
 		cur_frm.address_list = new wn.widgets.Listing({
 			parent: cur_frm.fields_dict['Address HTML'].wrapper,
-			page_length: 2,
+			page_length: 20,
 			new_doctype: "Address",
 			new_doc_onload: function(dn) {
 				ndoc = locals["Address"][dn];
@@ -87,12 +87,13 @@ cur_frm.cscript.make_contact = function() {
 	if(!cur_frm.contact_list) {
 		cur_frm.contact_list = new wn.widgets.Listing({
 			parent: cur_frm.fields_dict['Contact HTML'].wrapper,
-			page_length: 2,
+			page_length: 20,
 			new_doctype: "Contact",
 			new_doc_onload: function(dn) {
 				ndoc = locals["Contact"][dn];
 				ndoc.customer = cur_frm.doc.name;
 				ndoc.customer_name = cur_frm.doc.customer_name;
+                ndoc.territory = cur_frm.doc.territory;
 				if(cur_frm.doc.customer_type == 'Individual') {
 					ndoc.first_name = cur_frm.doc.customer_name;
 				}

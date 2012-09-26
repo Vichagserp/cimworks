@@ -1,2 +1,4 @@
 *.pyc
+*.txt
+wnframework/cgi-bin/webnotes/defs.py
 wnframework/backups/*

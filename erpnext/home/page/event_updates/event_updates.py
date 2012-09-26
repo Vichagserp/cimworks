@@ -7,7 +7,8 @@ def get_online_users():
 		from tabSessions t1, tabProfile t2
 		where t1.user = t2.name
 		and t1.user not in ('Guest','Administrator')
-		and TIMESTAMPDIFF(HOUR,t1.lastupdate,NOW()) <= 1""", as_list=1) or []
+		and TIMESTAMPDIFF(HOUR,t1.lastupdate,NOW()) <= 1
+        and status = 'Active'""", as_list=1) or []
 
 #
 # get unread messages
@@ -82,4 +83,3 @@ def get_setup_status():
 		return ''
 		
 	return {'ret': ret, 'percent': percent}
-		
