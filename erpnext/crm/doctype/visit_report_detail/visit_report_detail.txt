@@ -5,14 +5,14 @@
 	{
 		'creation': '2009-06-12 17:21:28',
 		'docstatus': 0,
-		'modified': '2012-07-03 12:10:50',
+		'modified': '2012-10-08 17:55:33',
 		'modified_by': 'sangeeta_a@trimosmetrology.net',
 		'owner': 'Administrator'
 	},
 
 	# These values are common for all DocType
 	{
-		'_last_update': '1338899490',
+		'_last_update': '1348512404',
 		'autoname': 'VRD/.#####',
 		'colour': 'White:FFF',
 		'doctype': 'DocType',
@@ -23,7 +23,7 @@
 		'search_fields': 'customer,visit_date, ',
 		'section_style': 'Simple',
 		'show_in_menu': 0,
-		'version': 40
+		'version': 44
 	},
 
 	# These values are common for all DocField
@@ -106,14 +106,14 @@
 	{
 		'doctype': 'DocField',
 		'fieldname': 'territory',
-		'fieldtype': 'Link',
+		'fieldtype': 'Select',
 		'in_filter': 1,
-		'label': 'Territory',
+		'label': 'Territory of visited place',
 		'oldfieldname': 'territory',
 		'oldfieldtype': 'Link',
-		'options': 'Territory',
-		'permlevel': 1,
-		'reqd': 0,
+		'options': '\nBangalore\nChennai\nCoimbatore\nPune\nHyderabad\nNorth Maharashtra\nSouth Maharashtra\nDelhi\nPunjab\nUP\nJharkhand\nThane\nGujarat\nMP\n',
+		'permlevel': 0,
+		'reqd': 1,
 		'width': '125px'
 	},
 
