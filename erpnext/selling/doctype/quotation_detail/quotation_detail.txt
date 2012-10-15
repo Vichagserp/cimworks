@@ -5,14 +5,14 @@
 	{
 		'creation': '2009-03-20 09:53:07',
 		'docstatus': 0,
-		'modified': '2012-01-10 15:26:51',
+		'modified': '2012-10-08 16:00:01',
 		'modified_by': 'sangeeta_a@trimosmetrology.net',
 		'owner': 'Administrator'
 	},
 
 	# These values are common for all DocType
 	{
-		'_last_update': '1322068200',
+		'_last_update': '1326189411',
 		'autoname': 'QUOD/.#####',
 		'colour': 'White:FFF',
 		'doctype': 'DocType',
@@ -24,7 +24,7 @@
 		'section_style': 'Tray',
 		'server_code_error': ' ',
 		'show_in_menu': 0,
-		'version': 31
+		'version': 34
 	},
 
 	# These values are common for all DocField
@@ -116,7 +116,7 @@
 		'label': 'Item Type',
 		'oldfieldname': 'item_type',
 		'oldfieldtype': 'Link',
-		'options': 'link:Item Type',
+		'options': '\nAccessories\nInspection Services\nInstrument\nService\nSoftware\nSpares',
 		'permlevel': 1,
 		'search_index': 1
 	},
@@ -192,7 +192,7 @@
 		'label': 'Ref Rate',
 		'oldfieldname': 'ref_rate',
 		'oldfieldtype': 'Currency',
-		'permlevel': 0,
+		'permlevel': 1,
 		'print_hide': 1,
 		'reqd': 0,
 		'trigger': 'Client',
@@ -256,7 +256,7 @@
 		'label': 'Ref Rate*',
 		'oldfieldname': 'base_ref_rate',
 		'oldfieldtype': 'Currency',
-		'permlevel': 0,
+		'permlevel': 1,
 		'print_hide': 1,
 		'width': '100px'
 	},

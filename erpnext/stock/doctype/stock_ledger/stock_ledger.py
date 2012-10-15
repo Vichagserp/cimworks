@@ -76,9 +76,20 @@ class DocType:
 				#	msgprint("Serial No is not required for non-stock item: %s" % d.item_code, raise_exception=1)
 				#if ar_required != 'Yes':
 				#	msgprint("If serial no required, please select 'Yes' in 'Has Serial No' in Item :" + d.item_code + ', otherwise please remove serial no', raise_exception=1)
-			if ar_required == 'Yes' and not d.serial_no:
-				msgprint("Serial no is mandatory for item: "+ d.item_code, raise_exception = 1)
-
+			if ar_required == 'Yes':
+				if not d.serial_no:
+					msgprint("Serial no is mandatory for item: "+ d.item_code, raise_exception = 1)
+				else:
+					serial_nos = self.get_sr_no_list(d.serial_no)
+					for s in serial_nos:
+						sr_det = sql("select name, item_code from `tabSerial No` where name = '%s'" % s)
+						if not sr_det:
+							msgprint("Serial No: %s does not exist in system" % s, raise_exception = 1)
+						else:
+							item = sr_det[0][1]
+							if d.item_code != item:
+								msgprint("Serial No: %s belongs Item: %s" % (s, item), raise_exception = 1)
+	
 
 
 	# -------------------
