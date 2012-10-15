@@ -115,6 +115,10 @@ class DocType(TransactionBase):
       elif st == 'Cancel' and sql("select name from `tabService Quotation` where inquiry_no = '%s'" % (self.doc.inquiry_no)): status = 'Quotation Given'
       else: st = 'Open'
       sql("update `tabLead` set status = '%s' where name = '%s'" % (status, self.doc.inquiry_no))
+
+  def update_quotation_status(self, st):
+    if self.doc.service_quotation_no:
+      sql("update `tabService Quotation` set status = '%s' where name = '%s'" % (st, self.doc.service_quotation_no))
         
   def update_warranty_amc_history(self, submit = 1):
     if self.doc.order_type in ['AMC', 'OTS (One Time Service)']:
@@ -146,6 +150,7 @@ class DocType(TransactionBase):
     set(self.doc, 'status', 'Submitted')
     # Update Lead
     self.update_lead_status('Confirm')
+    self.update_quotation_status('Order Confirmed')
     self.update_serial_master()
     self.update_warranty_amc_history(submit = 1)
     msgprint("Schedule added to calender")
@@ -154,6 +159,7 @@ class DocType(TransactionBase):
   def on_cancel(self):
     set(self.doc, 'status', 'Cancelled')
     self.update_lead_status('Cancel')
+    self.update_quotation_status('Submitted')
     # remove from calendar and serial master
     self.remove_from_serial_table()
     self.update_warranty_amc_history(submit = 0)
