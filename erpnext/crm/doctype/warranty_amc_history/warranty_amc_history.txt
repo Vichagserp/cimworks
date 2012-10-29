@@ -5,8 +5,8 @@
 	{
 		'creation': '2010-02-12 12:14:44',
 		'docstatus': 0,
-		'modified': '2012-04-25 20:08:41',
-		'modified_by': 'Administrator',
+		'modified': '2012-10-19 12:53:01',
+		'modified_by': 'manisha_s@trimosmetrology.net',
 		'owner': 'zoheb@webnotestech.com'
 	},
 
@@ -21,7 +21,7 @@
 		'print_outline': 'No',
 		'section_style': 'Simple',
 		'show_in_menu': 0,
-		'version': 8
+		'version': 10
 	},
 
 	# These values are common for all DocField

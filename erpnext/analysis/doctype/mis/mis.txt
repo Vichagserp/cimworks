@@ -5,8 +5,8 @@
 	{
 		'creation': '2012-03-14 09:10:42',
 		'docstatus': 0,
-		'modified': '2012-09-04 12:21:02',
-		'modified_by': 'Administrator',
+		'modified': '2012-10-29 15:05:32',
+		'modified_by': 'sangeeta_a@trimosmetrology.net',
 		'owner': 'Administrator'
 	},
 
@@ -21,7 +21,7 @@
 
 	# These values are common for all DocType
 	{
-		'_last_update': '1346061085',
+		'_last_update': '1351503007',
 		'autoname': 'MIS/.######',
 		'colour': 'White:FFF',
 		'doctype': 'DocType',
@@ -30,9 +30,9 @@
 		'search_fields': 'po_id_no,customer,territory,order_status,account_head,account_type,executed_in_month,tentative_execution_month,po_receipt_date,tentative_exe_month_on_basis_of_material_import',
 		'section_style': 'Simple',
 		'show_in_menu': 0,
-		'subject': 'PO ID No.: %(po_id_no)s Customer Name: %(customer)s Territory: %(territory)s Order Status: %(order_status)s Account Head: %(account_head)s Account Type: %(account_type)s Order Item',
+		'subject': 'PO ID No.: %(po_id_no)s Customer Name: %(customer)s Territory: %(territory)s Order Status: %(order_status)s Account Head: %(account_head)s PO Total Value: %(amount_balance)s',
 		'tag_fields': 'order_status, account_head',
-		'version': 123
+		'version': 129
 	},
 
 	# These values are common for all DocFormat
@@ -109,7 +109,7 @@
 		'fieldtype': 'Select',
 		'in_filter': 1,
 		'label': 'PO Receipt Fiscal Year',
-		'options': 'link:Fiscal Year',
+		'options': '\n2003-2004\n2004-2005\n2005-2006\n2006-2007\n2007-2008\n2008-2009\n2009-2010\n2010-2011\n2011-2012\n2012-2013',
 		'permlevel': 0
 	},
 
@@ -136,6 +136,7 @@
 
 	# DocField
 	{
+		'allow_on_submit': 0,
 		'doctype': 'DocField',
 		'fieldname': 'territory',
 		'fieldtype': 'Link',
@@ -170,7 +171,7 @@
 		'fieldtype': 'Select',
 		'in_filter': 1,
 		'label': 'Company',
-		'options': 'link:Company',
+		'options': '\nCTIPL\nTMIPL',
 		'permlevel': 0,
 		'reqd': 1
 	},
@@ -227,6 +228,7 @@
 
 	# DocField
 	{
+		'allow_on_submit': 1,
 		'doctype': 'DocField',
 		'fieldname': 'supplier_name',
 		'fieldtype': 'Link',
@@ -269,7 +271,7 @@
 		'fieldname': 'currency',
 		'fieldtype': 'Select',
 		'label': 'Currency',
-		'options': 'link:Currency',
+		'options': '\nCAD\nCHF\nEUR\nGBP\nINR\nJPY\nSGD\nUSD',
 		'permlevel': 0,
 		'reqd': 1
 	},
@@ -280,7 +282,7 @@
 		'fieldname': 'price_list',
 		'fieldtype': 'Select',
 		'label': 'Price List',
-		'options': 'link:Price List',
+		'options': '\nAberlink\nAffri\nAMC\nAndrews\nAPI\nBlickle\nBOWERS\nBreuckmann\nCarl Zeiss\nCorning Tropel/Wimeko\nCreaform/ Handyscan\nDefelsko\nDelCam\nDucourret EDA\nEasy-Metric\nEXAMECA\nGapgun\nGeartec\nGechter\nGeomagic\nHelios\nHualong\nIBR\nIMS\nIndigeneous\nITP\nJWF\nKarl Deutsch\nKOBA\nLTF\nLW\nMABU\nMicrotest\nNikon\nOptasell\nOskarSchwenk\nOTC\nOther Service\nOTS\nOTSC\nPROTEL\nQ-Das\nQ-Das - Courier with CVD\nRapid Form\nRenishaw\nRevwrks\nRevXperts\nSIP\nStarrett\nSTATUS PRO\nSteinmeyer\nSylvac\nThome\nTIME\nTrimos\nTTI\nVICI\nWerth\nZeltwanger',
 		'permlevel': 0,
 		'reqd': 1
 	},
@@ -422,7 +424,7 @@
 		'fieldname': 'payment_term',
 		'fieldtype': 'Select',
 		'label': 'Payment Term',
-		'options': '\nAgainst Proforma Invoice\nAgainst Delivery\nAfter Completion\nCOD\nAdvance along with PO\nAdvance\n100% advance by TT\nAfter Receipt of Invoice',
+		'options': '\nAgainst Proforma Invoice\nAgainst Delivery\nAfter Completion\nCOD\nAdvance along with PO\nAdvance\n50% Advance\n100% advance by TT\nAfter Receipt of Invoice',
 		'permlevel': 0
 	},
 
@@ -535,7 +537,7 @@
 		'fieldtype': 'Select',
 		'in_filter': 1,
 		'label': 'Executed Fiscal Year',
-		'options': 'link:Fiscal Year',
+		'options': '\n2003-2004\n2004-2005\n2005-2006\n2006-2007\n2007-2008\n2008-2009\n2009-2010\n2010-2011\n2011-2012\n2012-2013',
 		'permlevel': 0
 	},
 

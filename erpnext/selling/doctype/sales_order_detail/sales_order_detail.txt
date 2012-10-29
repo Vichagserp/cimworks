@@ -5,7 +5,7 @@
 	{
 		'creation': '2009-03-20 09:53:09',
 		'docstatus': 0,
-		'modified': '2012-01-10 15:30:37',
+		'modified': '2012-10-19 15:44:51',
 		'modified_by': 'sangeeta_a@trimosmetrology.net',
 		'owner': 'Administrator'
 	},
@@ -22,7 +22,7 @@
 		'section_style': 'Tray',
 		'server_code_error': ' ',
 		'show_in_menu': 0,
-		'version': 54
+		'version': 55
 	},
 
 	# These values are common for all DocField
@@ -150,7 +150,7 @@
 		'label': 'Ref Rate',
 		'oldfieldname': 'ref_rate',
 		'oldfieldtype': 'Currency',
-		'permlevel': 0,
+		'permlevel': 1,
 		'reqd': 0,
 		'trigger': 'Client',
 		'width': '70px'

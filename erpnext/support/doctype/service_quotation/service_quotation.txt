@@ -5,8 +5,8 @@
 	{
 		'creation': '2009-04-06 12:14:36',
 		'docstatus': 0,
-		'modified': '2012-10-15 21:30:38',
-		'modified_by': 'Administrator',
+		'modified': '2012-10-29 14:44:16',
+		'modified_by': 'sangeeta_a@trimosmetrology.net',
 		'owner': 'Administrator'
 	},
 
@@ -21,7 +21,7 @@
 
 	# These values are common for all DocType
 	{
-		'_last_update': '1348512404',
+		'_last_update': '1351499869',
 		'allow_attach': 1,
 		'client_script': 'cur_frm.cscript.custom_refresh = function(doc, cdt, cdn) {\n  if(doc.docstatus == 1 && doc.status != \'Closed\')\n    unhide_field([\'quote_received_by_customer\',\'Update Info\']);\n  else\n    hide_field([\'quote_received_by_customer\',\'Update Info\']);\n}\n\ncur_frm.cscript.quote_received_by_customer = function(doc, cdt, cdn) {\n  $c_obj(make_doclist(doc.doctype, doc.name), \'update_quote_received_status\', \'\',function(r, rt) { });\n}\n\ncur_frm.fields_dict["inquiry_no"].get_query = function(doc, cdt, cdn) {\n  return \'SELECT `tabLead`.name, `tabLead`.customer_name, `tabLead`.territory, `tabLead`.status FROM `tabLead` WHERE `tabLead`.docstatus = 1 AND `tabLead`.lead_type = "Service" AND `tabLead`.%(key)s LIKE "%s"\'\n}\n\ncur_frm.cscript.inquiry_no = function(doc, cdt, cdn) {\n  get_server_fields(\'get_lead_details\',\'\',\'\',doc, cdt, cdn, 1, function(r,rt) {cur_frm.refresh();} );\n}',
 		'colour': 'White:FFF',
@@ -36,7 +36,7 @@
 		'server_code': '\n  def autoname(self):\n    self.doc.name = make_autoname(self.doc.naming_series+\'/.####\')\n\n  def get_lead_details(self):\n    get_obj(\'DocType Mapper\', \'Lead-Service Quotation\').dt_map(\'Lead\',\'Service Quotation\', self.doc.inquiry_no, self.doc, self.doclist, "[[\'Lead\',\'Service Quotation\'],[\'Service Item Detail\',\'Service Quotation Detail\']]")  \n\n  def update_stages(self):\n    self.doc.save()\n\n  def get_factor_figure(self):\n    return cstr(get_obj(\'Sales Common\').get_factor_figure(self))\n  \n  def update_quote_received_status(self, arg):\n    sql("update `tabQuotation` set quote_received_by_customer = \'%s\' where name = \'%s\'" % (self.doc.quote_received_by_customer, self.doc.name))\n\n  def custom_validate(self):\n    get_obj("Sales Common").check_active_customer(self.doc.customer_name)\n    get_obj("Sales Common").check_active_contact(self.doc.customer_name, self.doc.contact_person)\n\n  def custom_on_submit(self):\n    # update Lead\n    if self.doc.inquiry_no:\n      sql("update tabLead set status = \'Quotation Given\' where name = %s",self.doc.inquiry_no)\n\n  def custom_on_cancel(self):\n    # update Lead\n    if self.doc.inquiry_no:\n      sql("update tabLead set status = \'Open\' where name = %s",self.doc.inquiry_no)\n  \n  def send_for_approval(self):\n    self.doc.save()\n    send_to = []\n    send = sql("select t1.email from `tabProfile` t1,`tabUserRole` t2 where t2.role = \'CRM Manager\' and t2.parent = t1.name and ifnull(t1.enabled, 0) = 1")\n    for d in send:\n      send_to.append(d[0])\n    msg = \'\'\'\nApproval of Service Quotation for\nCustomer: %s\nIf you are not logged in please click on the link below:\n    https://iwebnotes.com/\n\'\'\' % (self.doc.customer_name)\n    sendmail(send_to, sender=\'automail@webnotestech.com\', subject=\'Approval of Service Quotation\', parts=[[\'text/plain\', msg]])\n    msgprint("Service Quotation has been sent for approval")\n\n  def send_feedback(self):\n    self.doc.save()\n    send_to = []\n    send = sql("select t1.email from `tabProfile` t1 where t1.name = %s and ifnull(t1.enabled, 0) = 1",self.doc.owner) \n    for d in send:\n      send_to.append(d[0])\n    msg = \'\'\'\nService Quotation for\nCustomer: %s\nhas been %s\nby %s\n\n\'\'\' % (self.doc.customer_name, self.doc.status, self.doc.approved_by)\n\n    sendmail(send_to, sender=\'automail@webnotestech.com\', subject=\'Service Quotation status\', parts=[[\'text/plain\', msg]])\n    msgprint("Feedback has been sent to %s"%(self.doc.owner))',
 		'server_code_error': '<pre style="text-align: left;"></pre>',
 		'show_in_menu': 0,
-		'version': 87
+		'version': 89
 	},
 
 	# These values are common for all DocFormat
@@ -377,6 +377,19 @@
 		'oldfieldname': 'sub_category',
 		'oldfieldtype': 'Select',
 		'options': '\nINR\nDI',
+		'permlevel': 0,
+		'reqd': 1
+	},
+
+	# DocField
+	{
+		'allow_on_submit': 1,
+		'doctype': 'DocField',
+		'fieldname': 'quotation_form',
+		'fieldtype': 'Select',
+		'in_filter': 1,
+		'label': 'Quotation Form',
+		'options': '\nStandard\nNon-Standard\nTender\nBudgetory offer ',
 		'permlevel': 0,
 		'reqd': 1
 	},
